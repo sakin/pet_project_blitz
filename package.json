@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "blitz dev",
     "build": "blitz build",
+    "prod": "NODE_ENV=production blitz build && blitz prisma migrate deploy",
     "start": "blitz start --port ${PORT-3000}",
     "studio": "blitz prisma studio",
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
@@ -25,12 +26,13 @@
   },
   "dependencies": {
     "@prisma/client": "3.2.1",
-    "blitz": "0.41.0",
-    "react-dom": "alpha",
-    "react": "alpha",
-    "zod": "3.9.8",
+    "blitz": "0.45.2",
     "final-form": "4.20.4",
-    "react-final-form": "6.5.7"
+    "global": "4.4.0",
+    "react": "alpha",
+    "react-dom": "alpha",
+    "react-final-form": "6.5.7",
+    "zod": "3.9.8"
   },
   "devDependencies": {
     "@types/preview-email": "2.0.1",
@@ -38,8 +40,8 @@
     "eslint": "7.32.0",
     "husky": "6.0.0",
     "lint-staged": "10.5.4",
-    "prettier-plugin-prisma": "0.15.0",
     "prettier": "2.4.1",
+    "prettier-plugin-prisma": "0.15.0",
     "pretty-quick": "3.1.1",
     "preview-email": "3.0.5",
     "prisma": "3.2.1",
